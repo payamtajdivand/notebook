@@ -60,7 +60,7 @@ function NoteList({ notes, onDeleteNote, onUpdateNote }) {
                   value={draftContent}
                   onChange={(e) => setDraftContent(e.target.value)}
                 />
-                <div style={{ display: "flex", gap: 8, marginTop: 6 }}>
+                <div className="note-actions">
                   <button
                     className="note-button"
                     type="button"
@@ -83,7 +83,7 @@ function NoteList({ notes, onDeleteNote, onUpdateNote }) {
                 {note.content && (
                   <p className="note-content">{note.content}</p>
                 )}
-                <div style={{ display: "flex", gap: 8, marginTop: 4 }}>
+                <div className="note-actions">
                   <button
                     className="note-button"
                     type="button"

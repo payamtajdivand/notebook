@@ -4,12 +4,23 @@ function NoteForm({ onAddNote }) {
   const [title, setTitle] = useState("");
   const [content, setContent] = useState("");
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
+  const submitNote = () => {
     if (!title.trim() && !content.trim()) return;
     onAddNote({ title: title.trim(), content: content.trim() });
     setTitle("");
     setContent("");
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    submitNote();
+  };
+
+  const handleTextareaKeyDown = (e) => {
+    if (e.key === "Enter" && !e.shiftKey) {
+      e.preventDefault();
+      submitNote();
+    }
   };
 
   return (
@@ -28,6 +39,7 @@ function NoteForm({ onAddNote }) {
         rows={4}
         value={content}
         onChange={(e) => setContent(e.target.value)}
+        onKeyDown={handleTextareaKeyDown}
       />
       <button type="submit" className="note-button">
         Add Note

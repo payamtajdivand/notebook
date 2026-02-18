@@ -24,8 +24,13 @@
 
 body {
   margin: 0;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text",
-    "Segoe UI", sans-serif;
+  font-family:
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "SF Pro Text",
+    "Segoe UI",
+    sans-serif;
   background: radial-gradient(circle at top, #1e293b 0, #020617 40%, #000 100%);
   color: var(--text);
   min-height: 100vh;
@@ -95,8 +100,10 @@ body {
   padding: 10px 11px;
   font-size: 0.95rem;
   outline: none;
-  transition: border-color var(--transition-fast),
-    box-shadow var(--transition-fast), background-color var(--transition-fast),
+  transition:
+    border-color var(--transition-fast),
+    box-shadow var(--transition-fast),
+    background-color var(--transition-fast),
     transform 120ms ease-out;
   resize: vertical;
 }
@@ -115,10 +122,15 @@ body {
 
 .note-button {
   align-self: flex-end;
-  padding: 8px 18px;
+  padding: 5px 10px;
   border-radius: 999px;
   border: none;
-  background: radial-gradient(circle at top, #38bdf8 0, #0ea5e9 40%, #0369a1 100%);
+  background: radial-gradient(
+    circle at top,
+    #38bdf8 0,
+    #0ea5e9 40%,
+    #0369a1 100%
+  );
   color: #0b1120;
   font-weight: 600;
   font-size: 0.9rem;
@@ -127,8 +139,10 @@ body {
   align-items: center;
   gap: 6px;
   box-shadow: 0 12px 30px rgba(56, 189, 248, 0.4);
-  transition: transform var(--transition-fast),
-    box-shadow var(--transition-fast), filter 120ms ease-out;
+  transition:
+    transform var(--transition-fast),
+    box-shadow var(--transition-fast),
+    filter 120ms ease-out;
 }
 
 .note-button:hover {
@@ -156,8 +170,11 @@ body {
   box-shadow: var(--shadow-subtle);
   position: relative;
   overflow: hidden;
-  transition: transform var(--transition-fast), box-shadow var(--transition-fast),
-    border-color var(--transition-fast), background 160ms ease-out;
+  transition:
+    transform var(--transition-fast),
+    box-shadow var(--transition-fast),
+    border-color var(--transition-fast),
+    background 160ms ease-out;
 }
 
 .note-card::before {
@@ -186,7 +203,12 @@ body {
 .note-card:hover {
   transform: translateY(-2px) translateZ(0);
   border-color: var(--accent-strong);
-  background: radial-gradient(circle at top left, #020617, #020617 42%, #000 100%);
+  background: radial-gradient(
+    circle at top left,
+    #020617,
+    #020617 42%,
+    #000 100%
+  );
   box-shadow: 0 18px 40px rgba(15, 23, 42, 0.95);
 }
 
@@ -214,8 +236,10 @@ body {
   font-weight: 500;
   cursor: pointer;
   align-self: flex-end;
-  transition: background-color var(--transition-fast),
-    color var(--transition-fast), transform 120ms ease-out;
+  transition:
+    background-color var(--transition-fast),
+    color var(--transition-fast),
+    transform 120ms ease-out;
 }
 
 .note-delete-button:hover {
@@ -225,6 +249,25 @@ body {
 
 .note-delete-button:active {
   transform: translateY(0);
+}
+
+.note-actions {
+  display: flex;
+  gap: 8px;
+  margin-top: 4px;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.note-card .note-button,
+.note-card .note-delete-button {
+  padding: 4px 10px;
+  font-size: 0.8rem;
+  box-shadow: none;
+}
+
+.note-card .note-button {
+  align-self: center;
 }
 
 .empty-state {
@@ -247,4 +290,3 @@ body {
     margin-top: 4px;
   }
 }
-
